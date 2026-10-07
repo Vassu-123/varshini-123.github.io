@@ -2,5 +2,7 @@
   "name": "Yerramneedi Varshini - Developer Portfolio",
   "description": "Professional personal portfolio of Yerramneedi Varshini, Computer Science Engineering undergraduate specializing in Java, Python, SQL, and Web Technologies.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
