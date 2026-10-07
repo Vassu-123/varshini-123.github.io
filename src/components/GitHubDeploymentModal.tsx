@@ -26,30 +26,23 @@ git init
 git add .
 git commit -m "feat: complete modern personal developer portfolio for Yerramneedi Varshini"
 
-# Step 2: Connect to your GitHub repository Vassu-123/portfolio-website
+# Step 2: Connect to your GitHub repository varshini-portfolio.github.io
 git branch -M main
-git remote add origin https://github.com/Vassu-123/portfolio-website.git
+git remote set-url origin https://github.com/Vassu-123/varshini-portfolio.github.io.git || git remote add origin https://github.com/Vassu-123/varshini-portfolio.github.io.git
 
 # Step 3: Push code to GitHub
 git push -u origin main`;
 
-  const vercelSteps = `# Quick 1-Command Live Deployment using Vercel CLI:
-npm install -g vercel
-vercel
+  const githubPagesSteps = `# Automated Deployment via GitHub Actions:
+# 1. Push your repository to GitHub:
+git push -u origin main
 
-# Or via GitHub Connect on vercel.com:
-# 1. Go to https://vercel.com
-# 2. Click "Add New Project" -> Import your "portfolio-website" repo
-# 3. Framework Preset: Vite
-# 4. Click "Deploy" -> You will get your instant live HTTPS URL!`;
+# 2. In your repository on GitHub:
+# Go to Settings -> Pages -> Build and deployment -> Source:
+# Select "GitHub Actions"
 
-  const githubPagesSteps = `# To deploy for free on GitHub Pages:
-# 1. In package.json, add: "homepage": "https://Vassu-123.github.io/portfolio-website"
-# 2. Run: npm install gh-pages --save-dev
-# 3. Add to scripts: "deploy": "gh-pages -d dist"
-# 4. Build and deploy:
-npm run build
-npm run deploy`;
+# 3. Your site deploys automatically to:
+# https://varshini-portfolio.github.io/`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-xs overflow-y-auto">
@@ -101,33 +94,12 @@ npm run deploy`;
             </pre>
           </div>
 
-          {/* Section 2: Free Cloud Deployment Options */}
+          {/* Section 2: GitHub Pages Automated Deployment */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Globe className="w-4 h-4 text-emerald-500" />
-                <span>2. Recommended 1-Click Deployment (Vercel / Netlify)</span>
-              </h4>
-              <button
-                onClick={() => copyCode(vercelSteps, 'vercel')}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
-              >
-                {copiedStep === 'vercel' ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedStep === 'vercel' ? 'Copied' : 'Copy'}</span>
-              </button>
-            </div>
-
-            <pre className="p-4 rounded-xl bg-slate-950 text-slate-200 font-mono text-xs overflow-x-auto leading-relaxed border border-slate-800">
-              {vercelSteps}
-            </pre>
-          </div>
-
-          {/* Section 3: GitHub Pages */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-purple-500" />
-                <span>3. Alternative: GitHub Pages Deployment</span>
+                <span>2. Automated GitHub Pages Publishing</span>
               </h4>
               <button
                 onClick={() => copyCode(githubPagesSteps, 'ghpages')}

@@ -55,53 +55,31 @@ Open `src/data/portfolioData.ts`. In this file you can modify:
 Follow these terminal commands:
 
 ```bash
-# 1. Initialize git (if not already initialized)
+# 1. Initialize git and stage all files
 git init
-
-# 2. Stage all files
 git add .
-
-# 3. Commit your changes
 git commit -m "feat: complete personal portfolio website for Yerramneedi Varshini"
 
-# 4. Set default branch to main
+# 2. Set default branch to main
 git branch -M main
 
-# 5. Link your GitHub remote repository
-git remote add origin https://github.com/Vassu-123/portfolio-website.git
+# 3. Connect to your GitHub repository
+git remote set-url origin https://github.com/Vassu-123/varshini-portfolio.github.io.git || git remote add origin https://github.com/Vassu-123/varshini-portfolio.github.io.git
 
-# 6. Push your code
+# 4. Push your code
 git push -u origin main
 ```
 
 ---
 
-## 🌐 How to Publish & Deploy Online (Free Live URL)
+## 🌐 How to Publish on GitHub Pages
 
-### Option A: 1-Click Deployment via Vercel (Recommended)
-1. Go to [vercel.com](https://vercel.com) and sign in with your GitHub account (`Vassu-123`).
-2. Click **"Add New Project"** and select `portfolio-website`.
-3. Vercel automatically detects **Vite** as the framework preset.
-4. Click **Deploy**. Within 60 seconds, you get an active live HTTPS URL (e.g. `https://portfolio-website-vassu-123.vercel.app`).
-
-### Option B: Deploy on GitHub Pages
-1. Install `gh-pages`:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-2. In `package.json`, add:
-   ```json
-   "homepage": "https://Vassu-123.github.io/portfolio-website",
-   ```
-3. Add to the `"scripts"` section of `package.json`:
-   ```json
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d dist"
-   ```
-4. Run:
-   ```bash
-   npm run deploy
-   ```
+1. In your GitHub repository [https://github.com/Vassu-123/varshini-portfolio.github.io](https://github.com/Vassu-123/varshini-portfolio.github.io):
+2. Go to **Settings** -> **Pages** (in the left sidebar).
+3. Under **Build and deployment** -> **Source**:
+   Select **GitHub Actions**.
+4. The automated GitHub Actions workflow (`.github/workflows/deploy.yml`) will build and publish your site directly to:
+   👉 **`https://varshini-portfolio.github.io/`**
 
 ---
 

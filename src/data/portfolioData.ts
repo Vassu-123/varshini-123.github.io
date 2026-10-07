@@ -1,3 +1,6 @@
+import studyBuddyImg from '../assets/images/project_study_buddy_1791394056586.jpg';
+import portfolioShowcaseImg from '../assets/images/project_portfolio_showcase_1791394068846.jpg';
+
 export interface Project {
   id: string;
   title: string;
@@ -75,7 +78,6 @@ export const portfolioData = {
       "With hands-on proficiency in Java, Python, SQL, and core web technologies (HTML5, CSS3, JavaScript), I have independently developed and deployed full-stack web applications end-to-end. I focus on responsive UI development, object-oriented design principles, and reliable database fundamentals.",
       "I have maintained a consistent record of academic excellence across all stages of my education (10/10 in SSC, 97.8% in Intermediate, and 9.2 CGPA in B.Tech). I am actively preparing for software developer and full-stack engineering internships to contribute meaningfully to fast-paced engineering teams."
     ],
-    avatarUrl: "/src/assets/images/varshini_portrait_1791394044553.jpg",
   },
 
   profileBulletPoints: [
@@ -186,7 +188,7 @@ export const portfolioData = {
       tagline: "Productivity web application for students to organize, categorize, and retrieve academic materials.",
       technologies: ["HTML5", "CSS3", "JavaScript"],
       category: "Web Application",
-      image: "/src/assets/images/project_study_buddy_1791394056586.jpg",
+      image: studyBuddyImg,
       description:
         "Engineered a responsive study-resource management web application from the ground up, enabling students to organize, categorize, and retrieve academic materials efficiently across multiple subjects and topics.",
       points: [
@@ -204,7 +206,7 @@ export const portfolioData = {
       tagline: "Modern, responsive personal portfolio showcasing projects, technical competencies, and academic background.",
       technologies: ["HTML5", "CSS3", "JavaScript"],
       category: "Web Application",
-      image: "/src/assets/images/project_portfolio_showcase_1791394068846.jpg",
+      image: portfolioShowcaseImg,
       description:
         "Built and deployed a fully responsive personal portfolio website showcasing projects, technical skills, achievements, and contact information, ensuring consistent layout and readability across varying screen sizes.",
       points: [
@@ -213,8 +215,8 @@ export const portfolioData = {
         "Applied modern UI/UX principles, including visual hierarchy, readability, and design consistency, to enhance the site's professional presentation.",
         "Integrated professional social and portfolio links while optimizing page load performance and accessibility."
       ],
-      githubUrl: "https://github.com/Vassu-123/portfolio-website",
-      liveUrl: "https://varshini-portfolio.local"
+      githubUrl: "https://github.com/Vassu-123/varshini-portfolio.github.io",
+      liveUrl: "https://varshini-portfolio.github.io/"
     }
   ] as Project[],
 

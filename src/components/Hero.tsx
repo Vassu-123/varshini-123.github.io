@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, CheckCircle2, Code2, GraduationCap } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, CheckCircle2, Code2, GraduationCap, Terminal } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 interface HeroProps {
@@ -7,8 +7,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
   const { personal } = portfolioData;
 
   return (
@@ -112,72 +110,49 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
             </div>
           </div>
 
-          {/* Right Column: Visual Portrait & Developer Snapshot */}
+          {/* Right Column: Developer Code & Profile Specification Card (No Photo) */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
             <div className="relative w-full max-w-sm sm:max-w-md">
               {/* Decorative background border frame */}
               <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-indigo-500 to-sky-400 rounded-2xl blur-xs opacity-70 dark:opacity-50" />
               
-              <div className="relative bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 shadow-xl border border-slate-200 dark:border-slate-800 space-y-4">
-                {/* Photo container */}
-                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
-                  {!imageError ? (
-                    <img
-                      src={personal.avatarUrl}
-                      alt={personal.name}
-                      referrerPolicy="no-referrer"
-                      onLoad={() => setImageLoaded(true)}
-                      onError={() => setImageError(true)}
-                      className={`w-full h-full object-cover transition-opacity duration-300 ${
-                        imageLoaded ? 'opacity-100' : 'opacity-0'
-                      }`}
-                    />
-                  ) : null}
-
-                  {/* Fallback container if image fails */}
-                  {imageError && (
-                    <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-slate-900 text-white p-6 text-center">
-                      <Code2 className="w-12 h-12 text-blue-400 mb-3" />
-                      <p className="font-bold text-lg">{personal.name}</p>
-                      <p className="text-xs text-blue-200 mt-1">Computer Science Engineering</p>
-                    </div>
-                  )}
-
-                  {/* Overlay badge */}
-                  <div className="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md rounded-lg p-2.5 text-xs text-slate-800 dark:text-slate-200 border border-slate-200/50 dark:border-slate-800/50 flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 font-medium truncate">
-                      <GraduationCap className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      <span className="truncate">Ideal Institute of Technology</span>
-                    </span>
-                    <span className="font-semibold text-blue-600 dark:text-blue-400 shrink-0 ml-1">
-                      2023–2027
-                    </span>
+              <div className="relative bg-slate-900 text-slate-100 rounded-2xl p-5 shadow-2xl border border-slate-800 space-y-4 font-mono text-xs">
+                {/* Terminal Header */}
+                <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-400">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                   </div>
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                    <Terminal className="w-3.5 h-3.5 text-blue-400" />
+                    <span>developer.json</span>
+                  </div>
+                  <span className="text-[10px] text-emerald-400">● ready</span>
                 </div>
 
-                {/* Developer Fact sheet */}
-                <div className="space-y-2 pt-1 text-xs text-slate-600 dark:text-slate-400">
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Location</span>
-                    </span>
-                    <span className="font-medium text-slate-900 dark:text-slate-200">{personal.location}</span>
-                  </div>
+                {/* Code Body */}
+                <div className="space-y-1.5 text-[11.5px] leading-relaxed text-slate-300">
+                  <p><span className="text-blue-400">const</span> developer = &#123;</p>
+                  <p className="pl-4">name: <span className="text-emerald-300">"{personal.name}"</span>,</p>
+                  <p className="pl-4">role: <span className="text-amber-200">"Software & Full Stack Developer"</span>,</p>
+                  <p className="pl-4">education: <span className="text-sky-300">"B.Tech CSE"</span>,</p>
+                  <p className="pl-4">college: <span className="text-slate-300">"Ideal Institute of Technology"</span>,</p>
+                  <p className="pl-4">cgpa: <span className="text-purple-300">9.2</span>,</p>
+                  <p className="pl-4">languages: [<span className="text-emerald-300">"Java"</span>, <span className="text-emerald-300">"Python"</span>, <span className="text-emerald-300">"C"</span>, <span className="text-emerald-300">"SQL"</span>],</p>
+                  <p className="pl-4">web: [<span className="text-emerald-300">"HTML5"</span>, <span className="text-emerald-300">"CSS3"</span>, <span className="text-emerald-300">"JavaScript"</span>],</p>
+                  <p className="pl-4">seeking: <span className="text-emerald-400">"Internship / Fresher Role"</span>,</p>
+                  <p className="pl-4">location: <span className="text-slate-300">"East Godavari, AP"</span></p>
+                  <p>&#125;;</p>
+                </div>
 
-                  <div className="flex items-center justify-between">
-                    <span>Languages</span>
-                    <span className="font-medium text-slate-900 dark:text-slate-200">
-                      {personal.languages.join(' & ')}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <span>Core Focus</span>
-                    <span className="font-medium text-blue-600 dark:text-blue-400">
-                      Java · Python · SQL · Web Dev
-                    </span>
-                  </div>
+                {/* Status Bar */}
+                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1.5 text-emerald-400">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Open for Opportunities</span>
+                  </span>
+                  <span className="text-slate-500">Ideal IT · 2023–2027</span>
                 </div>
               </div>
             </div>
